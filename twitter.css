@@ -1,1 +1,54 @@
+```css
+body {
+    font-family: Arial;
+    background: #eef2f5;
+    margin: 0;
+}
+
+.app {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: #1da1f2;
+    text-align: center;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #1da1f2;
+    color: white;
+    border: none;
+}
+
+.post {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.post button {
+    width: auto;
+}
+
+.delete {
+    background: red;
+}
+
+.like {
+    background: #555;
+}
+```
 
