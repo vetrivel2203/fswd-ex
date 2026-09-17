@@ -1,149 +1,30 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
     <title>Mini Twitter</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial;
-            background: #eef2f5;
-            margin: 0;
-        }
-
-        .app {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #1da1f2;
-            text-align: center;
-        }
-
-        input, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        button {
-            background: #1da1f2;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .post {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 8px;
-        }
-
-        .post button {
-            width: auto;
-            margin-right: 8px;
-            padding: 7px 12px;
-        }
-
-        .delete {
-            background: #e74c3c;
-        }
-
-        .like {
-            background: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="app">
 
     <h1>🐦 Mini Twitter</h1>
 
-    <textarea id="postText" placeholder="What's happening?"></textarea>
+    <textarea id="postText"
+        placeholder="What's happening?"></textarea>
+
     <button onclick="addPost()">Post</button>
 
-    <input id="search" placeholder="Search posts..." onkeyup="searchPosts()">
+    <input id="search"
+        placeholder="Search posts..."
+        onkeyup="searchPosts()">
 
     <div id="posts"></div>
 
 </div>
 
-<script>
-    let posts = [];
-
-    function addPost() {
-        let text = document.getElementById("postText").value;
-
-        if (text.trim() == "") {
-            alert("Write something!");
-            return;
-        }
-
-        posts.unshift({
-            text: text,
-            likes: 0
-        });
-
-        document.getElementById("postText").value = "";
-        displayPosts(posts);
-    }
-
-    function displayPosts(data) {
-        let output = "";
-
-        data.forEach((post, index) => {
-            output += `
-                <div class="post">
-                    <p>${post.text}</p>
-
-                    <button class="like"
-                        onclick="likePost(${index})">
-                        ❤️ ${post.likes}
-                    </button>
-
-                    <button class="delete"
-                        onclick="deletePost(${index})">
-                        Delete
-                    </button>
-                </div>
-            `;
-        });
-
-        document.getElementById("posts").innerHTML = output;
-    }
-
-    function likePost(index) {
-        posts[index].likes++;
-        displayPosts(posts);
-    }
-
-    function deletePost(index) {
-        posts.splice(index, 1);
-        displayPosts(posts);
-    }
-
-    function searchPosts() {
-        let search = document.getElementById("search").value.toLowerCase();
-
-        let result = posts.filter(post =>
-            post.text.toLowerCase().includes(search)
-        );
-
-        displayPosts(result);
-    }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+```
