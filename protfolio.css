@@ -1,1 +1,48 @@
+```css
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
 
+nav {
+    padding: 20px;
+    background: #020617;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 20px;
+}
+
+.home {
+    min-height: 50vh;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+span {
+    color: #38bdf8;
+}
+
+p {
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px 25px;
+    background: #38bdf8;
+    border: 0;
+    border-radius: 5px;
+}
+```
